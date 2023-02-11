@@ -1,0 +1,101 @@
+
+.loader {
+ 
+  overflow: hidden;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center; 
+  justify-content: center;  
+  z-index: 100000;
+}
+
+.loader__element {
+  border-radius: 100%;
+  border: 5px solid #555;
+  margin: 8px;
+}
+
+.loader__element:nth-child(1) {
+  animation: preloader .6s ease-in-out alternate infinite;
+}
+.loader__element:nth-child(2) {
+  animation: preloader .6s ease-in-out alternate .2s infinite;
+}
+
+.loader__element:nth-child(3) {
+  animation: preloader .6s ease-in-out alternate .4s infinite;
+}
+
+@keyframes preloader {
+  100% { transform: scale(2); }
+}
+body{
+    text-align: center;
+}
+div{
+    width: 100px ;
+    height: 100px;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    animation-duration: 3s;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.div1,.div3,.div5{
+    background-color: green;
+    top:0;
+    animation-fill-mode:forwards;
+    animation-name: moveToBottom;
+}
+.div2,.div4,.div6{
+    background-color: #ccc;
+    bottom: 0;
+    animation-fill-mode:forwards;
+    animation-name: moveToTop;
+}
+.div1{
+    left:20%;
+   
+}
+.div2{
+    left:30%;
+    animation-delay: 3s;
+}
+.div3{
+    left: 40%;
+    animation-delay: 6s;
+}
+.div4{
+    left:50%;
+    animation-delay: 9s;
+}
+.div5{
+    left:60%;
+    animation-delay: 12s;
+}
+.div6{
+    left:70%;
+    animation-delay: 15s;
+}
+@keyframes moveToBottom {
+    0%{
+        top:0
+    }
+    100%{
+       top:84%;
+    }
+}
+@keyframes moveToTop {
+    0%{
+        bottom:0
+    }
+    100%{
+       bottom:84%;
+    }
+}
